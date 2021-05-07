@@ -133,3 +133,51 @@ java.lang.NullPointerException: Cannot invoke "org.eclipse.swt.ole.win32.OleAuto
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+
+!ENTRY org.eclipse.ui 2 2 2021-05-07 08:50:49.900
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-07 08:51:39.582
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-07 08:51:39.583
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@7c9918ff[org.springframework.tooling.boot.ls:1.25.0.202103111026(id=555)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-07 08:51:39.586
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-07 08:51:39.638
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-07 08:51:46.749
+!MESSAGE Boot LS startup time from start to initialized: 7140ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-07 08:51:46.901
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.ZCTlmIFWisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-07 08:51:46.910
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-07 08:51:46.913
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-07 08:51:46.914
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-07 08:51:46.914
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.ZCTlmIFW => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-07 08:51:46.915
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-07 08:51:46.938
+!MESSAGE classpath=94 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-07 08:51:46.949
+!MESSAGE buffering callback sts4.classpath.ZCTlmIFW ppmtool false 94
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-07 08:51:46.949
+!MESSAGE executing callback sts4.classpath.ZCTlmIFW 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-07 08:51:47.544
+!MESSAGE executing callback sts4.classpath.ZCTlmIFW SUCCESS [done]

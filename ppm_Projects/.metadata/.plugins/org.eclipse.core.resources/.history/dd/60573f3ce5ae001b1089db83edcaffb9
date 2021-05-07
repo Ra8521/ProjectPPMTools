@@ -1,0 +1,5 @@
+package com.JavaLearning.ppmtool.repositories;
+
+public interface ProjectRepository {
+
+}

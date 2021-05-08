@@ -1,0 +1,5 @@
+package com.JavaLearning.ppmtool.exceptions;
+
+public class ProjectIdExceptionResponse {
+
+}

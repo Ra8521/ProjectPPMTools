@@ -1,0 +1,6 @@
+package com.JavaLearning.ppmtool.services;
+
+@Service
+public class MapValidationErrorService {
+
+}

@@ -523,3 +523,15 @@ java.lang.NullPointerException
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-07 14:55:21.462
 !MESSAGE executing callback sts4.classpath.TBgMApfT SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-07 22:00:40.453
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.TBgMApfT
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-07 22:00:40.473
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.TBgMApfT
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-07 22:00:40.474
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-07 22:00:40.475
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.TBgMApfT => OK

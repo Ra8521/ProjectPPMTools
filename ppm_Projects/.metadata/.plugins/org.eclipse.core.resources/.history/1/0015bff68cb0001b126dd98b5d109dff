@@ -60,5 +60,10 @@ public class ProjectController {
     	return new ResponseEntity<String>("Project with id: "+projectId + " is deleted", HttpStatus.OK);
     }
     
-   
+    @PutMapping("/update")
+    public ResponseEntity<?> projectUpdate(@Validated @RequestBody Project project){
+    	project.setProjectIdentifier(project.getProjectIdentifier().toUpperCase());
+    	projectService.updateProject(project);
+    	return new ResponseEntity<String>("Project is updated", HttpStatus.OK);
+    }
 }

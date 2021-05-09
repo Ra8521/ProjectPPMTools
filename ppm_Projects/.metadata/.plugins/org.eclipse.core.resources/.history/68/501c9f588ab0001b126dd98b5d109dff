@@ -14,6 +14,10 @@ public interface ProjectRepository extends CrudRepository<Project,Long>{
 	
 	Project findByProjectIdentifier(String projectIdentifier);
 
+	@Modifying
+    @Query("delete from Project u where u.projectIdentifier = ?1")
+    void deleteByProjectIdentifier(String projectIdentifier);
+	
 	
 	@Override
 	Iterable<Project> findAll();

@@ -1,3 +1,6 @@
-import { combineReducers } from "redux"
-import thunk  from "redux-thunk"
-import rootReducer from "./reducers";
+import { combineReducers } from "redux";
+import errorReducer from "./errorReducer";
+
+export default combineReducers({
+  errors: errorReducer
+});

@@ -1797,3 +1797,15 @@ java.util.concurrent.TimeoutException
 	at org.springframework.tooling.jdt.ls.commons.classpath.SendClasspathNotificationsJob.flush(SendClasspathNotificationsJob.java:178)
 	at org.springframework.tooling.jdt.ls.commons.classpath.SendClasspathNotificationsJob.run(SendClasspathNotificationsJob.java:149)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-13 21:58:57.841
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.LgsfOqXY
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-13 21:58:57.842
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.LgsfOqXY
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-13 21:58:57.843
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-13 21:58:57.844
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.LgsfOqXY => OK

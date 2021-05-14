@@ -1,3 +1,3 @@
-/* reducer action define here */
+/* reducer action define here to perform */
 
 export const GET_ERRORS = "GET_ERRORS";

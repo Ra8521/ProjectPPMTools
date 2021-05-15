@@ -11,7 +11,18 @@ class Dashboard extends Component {
         this.props.getProjects();
     }
     render() {
+        /* create props in Dashboard component for learning puropse how  props pass from parent element to child */
+       
+       /* const projectObj = {
+            projectName : "project name props",
+            projectIdentifier: "Identifier props",
+            description:"decription props"
+        };
+        */
+       /* extracting props project.projects of dashboard component*/
+        const { projects } = this.props.project;
         return (
+
             <div className="projects">
             <div className="container">
                 <div className="row">
@@ -21,7 +32,14 @@ class Dashboard extends Component {
                         <CreateProjectButton/>
                         <br />
                         <hr />
-                    <ProjectItem/>
+                {/* here passing projectObj props of Dashboard component  to projectItem component props projectProps */}
+                  {/*  <ProjectItem project = {projectObj}/>  */}
+                {/* Iterating project list and map to projectItem props */}
+                  {projects.map(project => (
+                    <ProjectItem key={project.id} project={project} />
+                  ))}
+
+
                     </div>
                 </div>
             </div>
@@ -31,12 +49,18 @@ class Dashboard extends Component {
     }
 }
 
+/* the type of project projs is object */
 Dashboard.PropTypes = {
     project : PropTypes.object.isRequired,
     getProjects: PropTypes.object.isRequired
 };
+
+/* mapping application state to props("project") of Dashboard component*/
 const mapStateToProps = state =>({
-    project:state.project,
+    project:state.project
     
 }) ;
+
+/* here, connect(arg1, arg2) is actually, collecting data of state of application from backend through(getProjects) and 
+map to props of frontend component Dashboard*/
 export default connect(mapStateToProps,{getProjects})(Dashboard)

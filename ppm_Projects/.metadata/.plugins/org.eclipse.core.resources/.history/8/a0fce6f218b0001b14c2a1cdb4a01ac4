@@ -1,5 +1,0 @@
-package com.JavaLearning.ppmtool.exceptions;
-
-public class CustomResponseEntityExceptionHandler {
-
-}

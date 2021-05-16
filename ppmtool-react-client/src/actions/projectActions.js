@@ -30,13 +30,17 @@ export const getProjects = () => async dispatch => {
 
 /*RETRIEVE Operation*/
 export const getProject = (id,history) => async dispatch => {
-
+  try{
   const res = await axios.get(`http://localhost:8080/api/project/${id}`);
     /* dispatching actions to the store. */
+    
     dispatch({
       type: GET_PROJECT,
       payload: res.data
     });
-
+  }
+  catch(err){
+        history.push("/dashboard");
+  }
 
 }

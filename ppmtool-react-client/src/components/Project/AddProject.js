@@ -135,7 +135,7 @@ class AddProject extends Component {
   }
 }
 
-/* set uo mpping state to component props*/
+/* set up mpping state to component props*/
 
 AddProject.propTypes = {
   createProject: PropTypes.func.isRequired,

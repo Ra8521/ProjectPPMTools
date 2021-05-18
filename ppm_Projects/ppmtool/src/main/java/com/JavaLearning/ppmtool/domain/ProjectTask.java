@@ -2,14 +2,20 @@ package com.JavaLearning.ppmtool.domain;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.validation.constraints.NotBlank;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class ProjectTask {
@@ -26,7 +32,11 @@ public class ProjectTask {
     private Integer priority;
     private Date dueDate;
     //ManyToOne with Backlog
-
+    @ManyToOne(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+    @JoinColumn(name="backlog_id", updatable=false, nullable=false)
+    @JsonIgnore
+    private Backlog backlog;
+    
     @Column(updatable = false)
     private String projectIdentifer;
     private Date create_At;
@@ -126,6 +136,16 @@ public class ProjectTask {
     protected void onUpdate(){
         this.update_At = new Date();
     }
+    
+
+	public Backlog getBacklog() {
+		return backlog;
+	}
+
+
+	public void setBacklog(Backlog backlog) {
+		this.backlog = backlog;
+	}
 
 
 	@Override

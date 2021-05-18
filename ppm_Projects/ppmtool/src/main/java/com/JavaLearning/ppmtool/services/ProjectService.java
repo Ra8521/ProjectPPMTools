@@ -3,8 +3,10 @@ package com.JavaLearning.ppmtool.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.JavaLearning.ppmtool.domain.Backlog;
 import com.JavaLearning.ppmtool.domain.Project;
 import com.JavaLearning.ppmtool.exceptions.ProjectIdException;
+import com.JavaLearning.ppmtool.repositories.BacklogRepository;
 import com.JavaLearning.ppmtool.repositories.ProjectRepository;
 
 @Service
@@ -13,16 +15,33 @@ public class ProjectService {
 	@Autowired
 	private ProjectRepository projectRepository;
 	
-	public Project saveOrUpdateProject(Project project) {
-		//logic
-		try {
-			project.setProjectIdentifier(project.getProjectIdentifier().toUpperCase());
-			return projectRepository.save(project);
-		}
-		catch(Exception ex) {
-			throw new ProjectIdException("Project id: "+project.getProjectIdentifier().toUpperCase()+" already exist");
-		}
-	}
+	@Autowired
+	private BacklogRepository backlogRepository;
+	
+    public Project saveOrUpdateProject(Project project){
+    	String setIdentifier = project.getProjectIdentifier().toUpperCase();
+        try{
+        	
+            project.setProjectIdentifier(setIdentifier);
+
+            if(project.getId()==null){
+                Backlog backlog = new Backlog();
+                project.setBacklog(backlog);
+                backlog.setProject(project);
+                backlog.setProjectIdentifier(setIdentifier);
+            }
+
+            if(project.getId()!=null){
+                project.setBacklog(backlogRepository.findByProjectIdentifier(setIdentifier));
+            }
+
+            return projectRepository.save(project);
+
+        }catch (Exception e){
+            throw new ProjectIdException("Project ID '"+setIdentifier+"' already exists");
+        }
+
+    }
 	
 	public Project findProjectByIdentifier(String ProjectId) {
 		Project project =   projectRepository.findByProjectIdentifier(ProjectId.toUpperCase());

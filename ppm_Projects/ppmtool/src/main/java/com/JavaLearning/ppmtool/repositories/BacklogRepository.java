@@ -8,5 +8,7 @@ import com.JavaLearning.ppmtool.domain.Project;
 
 @Repository
 public interface BacklogRepository extends CrudRepository<Backlog,Long>{
+	
+	 Backlog findByProjectIdentifier(String Identifier);
 
 }

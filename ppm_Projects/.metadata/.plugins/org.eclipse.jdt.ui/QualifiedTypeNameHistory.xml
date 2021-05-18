@@ -34,4 +34,8 @@
     <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
     <fullyQualifiedTypeName name="com.JavaLearning.ppmtool.domain.ProjectTask"/>
     <fullyQualifiedTypeName name="com.JavaLearning.ppmtool.domain.Backlog"/>
+    <fullyQualifiedTypeName name="javax.persistence.FetchType"/>
+    <fullyQualifiedTypeName name="javax.persistence.OneToOne"/>
+    <fullyQualifiedTypeName name="javax.persistence.JoinColumn"/>
+    <fullyQualifiedTypeName name="com.JavaLearning.ppmtool.repositories.BacklogRepository"/>
 </qualifiedTypeNameHistroy>

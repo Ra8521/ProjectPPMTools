@@ -33,6 +33,12 @@ public class Project {
     private Date created_At;
     @JsonFormat(pattern = "yyyy-mm-dd")
     private Date updated_At;
+    
+    @OneToOne(fetch = FetchType.EAGER, cascade=CascadeType.ALL, mappedBy = "project")
+    /* the above constraint allow the project owning the relationship between project and backlog 
+     * like when we delete project , backlog is also deleted but vice-versa is not true
+     * */
+    private Backlog backlog;
 
     public Project() {
     }
@@ -110,4 +116,12 @@ public class Project {
         this.updated_At = new Date();
     }
 
+	public Backlog getBacklog() {
+		return backlog;
+	}
+
+	public void setBacklog(Backlog backlog) {
+		this.backlog = backlog;
+	}
+    
 }

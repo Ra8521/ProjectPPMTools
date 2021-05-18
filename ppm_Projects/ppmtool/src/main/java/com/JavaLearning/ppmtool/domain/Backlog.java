@@ -1,22 +1,41 @@
 package com.JavaLearning.ppmtool.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Backlog {
 		@Id
 		@GeneratedValue(strategy=GenerationType.IDENTITY)
 		private Long id;
+		
+		/* the sequence of project tasks within each backlog.*/
 		private Integer PTSequence=0;
-		private String ProjectIdentifier;
+		private String projectIdentifier;
 		
 		
 		// OneToOne with Project
-		
-		//OneToMant ProjectTask
+/*each project has one backlog and a backlog only belongs to that project to up to our specific project.	*/
+	   
+	    @OneToOne(fetch = FetchType.EAGER)
+	    @JoinColumn(name="project_id",nullable = false)
+	    
+	    @JsonIgnore
+	    /*Could not write JSON: Infinite recursion (StackOverflowError);
+	     * getting above error on removing above @JsonIgnore tag
+	     * */
+	    private Project project;
+	    
+	    
+		//OneToMany ProjectTask
+	/* Each backlog can have more than one task but each projectTask belong to only one project backlog */
 		public Backlog() {
 			
 			
@@ -44,15 +63,25 @@ public class Backlog {
 
 
 		public String getProjectIdentifier() {
-			return ProjectIdentifier;
+			return projectIdentifier;
 		}
 
 
 		public void setProjectIdentifier(String projectIdentifier) {
-			ProjectIdentifier = projectIdentifier;
+			this.projectIdentifier = projectIdentifier;
 		}
-		
-		
+
+
+		public Project getProject() {
+			return project;
+		}
+
+
+		public void setProject(Project project) {
+			this.project = project;
+		}
+
+
 		
 		
 }

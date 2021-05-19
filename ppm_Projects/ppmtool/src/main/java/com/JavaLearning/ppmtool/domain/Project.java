@@ -4,6 +4,7 @@ package com.JavaLearning.ppmtool.domain;
 import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -38,6 +39,7 @@ public class Project {
     /* the above constraint allow the project owning the relationship between project and backlog 
      * like when we delete project , backlog is also deleted but vice-versa is not true
      * */
+    @JsonIgnore
     private Backlog backlog;
 
     public Project() {

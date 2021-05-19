@@ -1,5 +1,7 @@
 package com.JavaLearning.ppmtool.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -49,5 +51,13 @@ public class ProjectTaskService {
 		
 		return projectTaskRepository.save(projectTask);
 		
+	}
+
+
+	public List<ProjectTask> findBacklogById(String backlog_id) {
+		// TODO Auto-generated method stub
+		Backlog backlog = backlogRepository.findByProjectIdentifier(backlog_id.toUpperCase());
+		
+		return projectTaskRepository.findByprojectIdentifier(backlog_id);
 	}
 }

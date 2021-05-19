@@ -40,8 +40,8 @@ public class Backlog {
 	    
 	    
 		//OneToMany ProjectTask
-	    @OneToMany(cascade=CascadeType.ALL, fetch= FetchType.EAGER, mappedBy="backlog")
-	    private List<ProjectTask> projectTaskList = new ArrayList();
+	    @OneToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER, mappedBy = "backlog", orphanRemoval = true)
+	    private List<ProjectTask> projectTaskList = new ArrayList<>();
 	    
 	/* Each backlog can have more than one task but each projectTask belong to only one project backlog */
 		public Backlog() {

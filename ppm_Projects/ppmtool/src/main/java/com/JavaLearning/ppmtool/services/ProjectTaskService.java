@@ -108,15 +108,15 @@ public class ProjectTaskService {
 
 
 
-	public String deleteByProjectTask(String backlog_id, String projectTaskSeq) {
+	public void deleteByProjectTask(String backlog_id, String projectTaskSeq) {
 		// TODO Auto-generated method stub
 		ProjectTask projectask = findProjectTaskBySequence(backlog_id,projectTaskSeq);
+		/*
 		Backlog backlog = projectask.getBacklog();
-		
 		List<ProjectTask> projectTaskList = backlog.getProjectTaskList();
 		projectTaskList.remove(projectask);
 		backlogRepository.save(backlog);
+		*/
 		projectTaskRepository.delete(projectask);
-		return ("Project Task with id: "+projectTaskSeq+ " of project with id: "+backlog_id);
 	}
 }

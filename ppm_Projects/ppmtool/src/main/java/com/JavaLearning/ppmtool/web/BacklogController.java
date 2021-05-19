@@ -10,8 +10,10 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -51,8 +53,20 @@ public class BacklogController {
 	}
 	
 	@GetMapping("/{backlog_id}/{projectTaskSeq}")
-	public ResponseEntity<ProjectTask> getP(@PathVariable String backlog_id, @PathVariable String projectTaskSeq){
+	public ResponseEntity<ProjectTask> getProjectTask(@PathVariable String backlog_id, @PathVariable String projectTaskSeq){
 		ProjectTask projectTask = projectTaskService.findProjectTaskBySequence(backlog_id,projectTaskSeq);
 		return new  ResponseEntity<ProjectTask> (projectTask,HttpStatus.OK);
 	}
+	
+	@PutMapping("/{backlog_id}/{projectTaskSeq}")
+	public ResponseEntity<?> updateProjectTask(@Validated @RequestBody ProjectTask projectTask,BindingResult result,
+			@PathVariable String backlog_id, @PathVariable String projectTaskSeq){
+		ResponseEntity<?> errormap = mapValidationErrorService.MapValidationService(result);
+    	if(errormap!=null) {
+    		return errormap;
+    	}
+    	ProjectTask updateTask = projectTaskService.updateByProjectService(projectTask, backlog_id, projectTaskSeq);
+    	return new ResponseEntity<ProjectTask>(updateTask,HttpStatus.OK);
+	}
+	
 }

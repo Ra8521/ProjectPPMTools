@@ -4,13 +4,11 @@
     <fullyQualifiedTypeName name="java.util.Map"/>
     <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="org.springframework.validation.BindingResult"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ResponseStatus"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ControllerAdvice"/>
     <fullyQualifiedTypeName name="org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ExceptionHandler"/>
     <fullyQualifiedTypeName name="org.springframework.web.context.request.WebRequest"/>
     <fullyQualifiedTypeName name="com.JavaLearning.ppmtool.exceptions.ProjectIdException"/>
-    <fullyQualifiedTypeName name="com.JavaLearning.ppmtool.repositories.ProjectRepository"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.DeleteMapping"/>
     <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.Modifying"/>
     <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.Query"/>
@@ -49,8 +47,11 @@
     <fullyQualifiedTypeName name="com.JavaLearning.ppmtool.domain.ProjectTask"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
     <fullyQualifiedTypeName name="com.JavaLearning.ppmtool.services.MapValidationErrorService"/>
-    <fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
     <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonIgnore"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
     <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.JavaLearning.ppmtool.repositories.ProjectRepository"/>
+    <fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ResponseStatus"/>
+    <fullyQualifiedTypeName name="com.JavaLearning.ppmtool.exceptions.ProjectNotFoundException"/>
 </qualifiedTypeNameHistroy>

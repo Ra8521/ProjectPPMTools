@@ -10,5 +10,5 @@ import com.JavaLearning.ppmtool.domain.ProjectTask;
 
 @Repository
 public interface ProjectTaskRepository extends CrudRepository<ProjectTask,Long>{
-   List<ProjectTask> findByprojectIdentifier(String projectIdentifier);
+	List<ProjectTask> findByProjectIdentifierOrderByPriority(String id);
 }

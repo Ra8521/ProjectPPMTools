@@ -7,7 +7,10 @@ import org.springframework.stereotype.Service;
 
 import com.JavaLearning.ppmtool.domain.Backlog;
 import com.JavaLearning.ppmtool.domain.ProjectTask;
+import com.JavaLearning.ppmtool.exceptions.ProjectIdException;
+import com.JavaLearning.ppmtool.exceptions.ProjectNotFoundException;
 import com.JavaLearning.ppmtool.repositories.BacklogRepository;
+import com.JavaLearning.ppmtool.repositories.ProjectRepository;
 import com.JavaLearning.ppmtool.repositories.ProjectTaskRepository;
 
 @Service
@@ -19,14 +22,20 @@ public class ProjectTaskService {
 	@Autowired
 	private ProjectTaskRepository projectTaskRepository;
 	
-	
+	@Autowired
+	private ProjectRepository projectRepository;
 	public ProjectTask addProjectTask(String projectIdentifier, ProjectTask projectTask) {
-		
+		projectIdentifier = projectIdentifier.toUpperCase();
 		//Project : Exception not found
-		//project task added to specific project, project!=null, backlog exist
+		/*
+		 * project not found
+		 */
 	
-		Backlog backlog = backlogRepository.findByProjectIdentifier(projectIdentifier.toUpperCase());
-		//set backlog to project task
+		//project task added to specific project, project!=null, backlog exist
+	Backlog backlog = backlogRepository.findByProjectIdentifier(projectIdentifier);
+	
+	try {
+	//set backlog to project task
 		projectTask.setBacklog(backlog);
 		//we will keep project sequence like: IDPRO-1, IDPRO-2 etc;
 		Integer BacklogSequence = backlog.getPTSequence();
@@ -47,17 +56,21 @@ public class ProjectTaskService {
 			projectTask.setStatus("TO_DO");
 		}
 		
-		
-		
 		return projectTaskRepository.save(projectTask);
-		
+	} catch(Exception e) {
+		throw new ProjectNotFoundException("Project not found");
+	}
 	}
 
 
-	public List<ProjectTask> findBacklogById(String backlog_id) {
+	public List<ProjectTask> findBacklogById(String ProjectIdentifier) {
 		// TODO Auto-generated method stub
-		Backlog backlog = backlogRepository.findByProjectIdentifier(backlog_id.toUpperCase());
 		
-		return projectTaskRepository.findByprojectIdentifier(backlog_id);
+		ProjectIdentifier = ProjectIdentifier.toUpperCase();
+		if(projectRepository.findByProjectIdentifier(ProjectIdentifier)==null) {
+			throw new ProjectNotFoundException("Project does not exist with id: "+ProjectIdentifier);
+		}
+		
+		return projectTaskRepository.findByProjectIdentifierOrderByPriority(ProjectIdentifier);
 	}
 }

@@ -61,7 +61,7 @@ public class ProjectService {
 	public void deleteProjectByIdentifier(String projectId) {
 		Project project = projectRepository.findByProjectIdentifier(projectId.toUpperCase());
 		if(project==null) {
-			throw new ProjectIdException("Peoject with Id: "+projectId+" does not exist");
+			throw new ProjectIdException("Project with Id: "+projectId+" does not exist");
 		}
 		projectRepository.delete(project);
 	}

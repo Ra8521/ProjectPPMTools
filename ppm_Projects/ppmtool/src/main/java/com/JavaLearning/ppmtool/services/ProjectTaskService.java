@@ -96,11 +96,27 @@ public class ProjectTaskService {
 		return projectTask;
 	}
 	
-	public ProjectTask updateByProjectService(ProjectTask updatedTask, String backlog_id, String pt_id) {
+	public ProjectTask updateByProjectTask(ProjectTask updatedTask, String backlog_id, String pt_id) {
 		
-		ProjectTask projectTask = projectTaskRepository.findByProjectSequence(pt_id);
+		//validating update request
+		findProjectTaskBySequence(backlog_id,pt_id);
 		
 		return projectTaskRepository.save(updatedTask);
 		
+	}
+
+
+
+
+	public String deleteByProjectTask(String backlog_id, String projectTaskSeq) {
+		// TODO Auto-generated method stub
+		ProjectTask projectask = findProjectTaskBySequence(backlog_id,projectTaskSeq);
+		Backlog backlog = projectask.getBacklog();
+		
+		List<ProjectTask> projectTaskList = backlog.getProjectTaskList();
+		projectTaskList.remove(projectask);
+		backlogRepository.save(backlog);
+		projectTaskRepository.delete(projectask);
+		return ("Project Task with id: "+projectTaskSeq+ " of project with id: "+backlog_id);
 	}
 }

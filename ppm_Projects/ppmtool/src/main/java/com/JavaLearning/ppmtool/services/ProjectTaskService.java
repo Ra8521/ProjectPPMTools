@@ -22,14 +22,15 @@ public class ProjectTaskService {
 		
 		//Project : Exception not found
 		//project task added to specific project, project!=null, backlog exist
-		Backlog backlog = backlogRepository.findByProjectIdentifier(projectIdentifier);
+	
+		Backlog backlog = backlogRepository.findByProjectIdentifier(projectIdentifier.toUpperCase());
 		//set backlog to project task
 		projectTask.setBacklog(backlog);
 		//we will keep project sequence like: IDPRO-1, IDPRO-2 etc;
 		Integer BacklogSequence = backlog.getPTSequence();
 		//update backlog sequence
 		BacklogSequence++;
-		
+		backlog.setPTSequence(BacklogSequence);
 		//Add sequence to project task
 		projectTask.setProjectSequence(projectIdentifier+"-"+BacklogSequence);
 		projectTask.setProjectIdentifer(projectIdentifier);

@@ -4,10 +4,10 @@ import{
     DELETE_PROJECT_TASK
 } from "../actions/types";
 
-const initialState{
-    project_tasks = [],
-    project_task = {}
-}
+const initialState = {
+    project_tasks : [],
+    project_task : {}
+};
 
 export default function backlogReducer(state = initialState, action) {
     switch(action.type){

@@ -3,7 +3,9 @@ import { getProject, createProject } from "../../actions/projectActions";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import classnames from "classnames";
- class UpdateProject extends Component {
+
+class UpdateProject extends Component {
+  //set state
   constructor() {
     super();
 
@@ -16,17 +18,13 @@ import classnames from "classnames";
       end_date: "",
       errors: {}
     };
-    
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
-    
   }
-
-   componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps) {
     if (nextProps.errors) {
       this.setState({ errors: nextProps.errors });
     }
-    
     const {
       id,
       projectName,
@@ -44,14 +42,13 @@ import classnames from "classnames";
       start_date,
       end_date
     });
- 
-}
+  }
 
      /*an instance of a component is being created and inserted into the DOM:*/
      componentDidMount(){
          /* extracting id props */
-         const {id} = this.props.match.params;
-       this.props.getProject(id, this.props.history);
+         const { id } = this.props.match.params;
+    this.props.getProject(id, this.props.history);
      }
 
      onChange(e) {
@@ -59,6 +56,7 @@ import classnames from "classnames";
     }
   
     onSubmit(e) {
+     
       e.preventDefault();
   
       const updateProject = {
@@ -72,8 +70,6 @@ import classnames from "classnames";
   
       this.props.createProject(updateProject, this.props.history);
     }
-
-
   render() {
     /* extarct errors from state*/
     const { errors } = this.state;
@@ -159,24 +155,25 @@ import classnames from "classnames";
 }
 
 UpdateProject.propTypes = {
-    getProject: PropTypes.func.isRequired,
-    createProject: PropTypes.func.isRequired,
-    project : PropTypes.object.isRequired,
-    errors: PropTypes.object.isRequired
-    
-  };
+  getProject: PropTypes.func.isRequired,
+  createProject: PropTypes.func.isRequired,
+  project: PropTypes.object.isRequired,
+  errors: PropTypes.object.isRequired
+};
 
   /* mapStateToProps is used for selecting the part of the data from the store that the connected component needs.*/
   /*  mapStateToProps function is the entire Redux store state */
-const mapStateToProps = state =>({
-     /* state.projectReducer.project*/
-    project : state.project.project,
+  const mapStateToProps = state => ({
+    project: state.project.project,
     errors: state.errors
-});
+  });
 
 /*
 With React Redux, our components never access the store directly - so use connect()
 The connect() function connects a React component to a Redux store. 
   2nd argument in connect() method "{getProject}" is actully method to call dispatch that pass data from action to store
 */
-export default connect(mapStateToProps, {getProject,createProject})(UpdateProject)
+export default connect(
+  mapStateToProps,
+  { getProject, createProject }
+)(UpdateProject);

@@ -112,7 +112,6 @@
                 <children xsi:type="basic:PartSashContainer" xmi:id="_Ues2a7d4EeutrbcfPTDhhg" containerData="6750" selectedElement="_Ues2bbd4EeutrbcfPTDhhg">
                   <children xsi:type="advanced:Placeholder" xmi:id="_Ues2bLd4EeutrbcfPTDhhg" elementId="org.eclipse.ui.editorss" containerData="8257" ref="_Uetd5rd4EeutrbcfPTDhhg"/>
                   <children xsi:type="basic:PartStack" xmi:id="_Ues2bbd4EeutrbcfPTDhhg" elementId="PartStack@4348b168" containerData="1743" selectedElement="_Ues2brd4EeutrbcfPTDhhg">
-                    <tags>MinimizedByZoom</tags>
                     <tags>active</tags>
                     <children xsi:type="advanced:Placeholder" xmi:id="_Ues2brd4EeutrbcfPTDhhg" elementId="org.eclipse.ui.console.ConsoleView" ref="_UeteYrd4EeutrbcfPTDhhg" closeable="true">
                       <tags>View</tags>
@@ -219,7 +218,7 @@
           <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
         </children>
         <children xsi:type="basic:Part" xmi:id="_53Tn8LfuEeuL6_pEGuMAxQ" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="ProjectTaskService.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;ProjectTaskService.java&quot; partName=&quot;ProjectTaskService.java&quot; title=&quot;ProjectTaskService.java&quot; tooltip=&quot;ppmtool/src/main/java/com/JavaLearning/ppmtool/services/ProjectTaskService.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/ppmtool/src/main/java/com/JavaLearning/ppmtool/services/ProjectTaskService.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;4009&quot; selectionTopPixel=&quot;1440&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;ProjectTaskService.java&quot; partName=&quot;ProjectTaskService.java&quot; title=&quot;ProjectTaskService.java&quot; tooltip=&quot;ppmtool/src/main/java/com/JavaLearning/ppmtool/services/ProjectTaskService.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/ppmtool/src/main/java/com/JavaLearning/ppmtool/services/ProjectTaskService.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;3789&quot; selectionTopPixel=&quot;1203&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>removeOnHide</tags>
           <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
@@ -397,7 +396,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_UeteyLd4EeutrbcfPTDhhg" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_n0e6ALkSEeuSAZvC8KnKtw" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_Uey9mLd4EeutrbcfPTDhhg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_cAPKsLkkEeu4I6dZLQRHjw" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_Uey9mLd4EeutrbcfPTDhhg"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Uete1bd4EeutrbcfPTDhhg" elementId="group.edit" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -428,7 +427,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_UeuEo7d4EeutrbcfPTDhhg" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_n0lnsLkSEeuSAZvC8KnKtw" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" enabled="false" type="Check" command="_Uey9Ubd4EeutrbcfPTDhhg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_cAY7sLkkEeu4I6dZLQRHjw" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" enabled="false" type="Check" command="_Uey9Ubd4EeutrbcfPTDhhg"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_UeuEr7d4EeutrbcfPTDhhg" elementId="org.eclipse.ui.DefaultTextEditor" visible="false">
         <tags>Draggable</tags>

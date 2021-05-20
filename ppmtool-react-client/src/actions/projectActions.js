@@ -1,17 +1,18 @@
 import axios from "axios";
-import { DELETE_PROJECT, GET_ERRORS } from "./types";
-import { GET_PROJECTS, GET_PROJECT } from "./types";
+import { GET_ERRORS, GET_PROJECTS, GET_PROJECT, DELETE_PROJECT } from "./types";
 
+
+/* CRUD */
+/* CREATE Operation */
 export const createProject = (project, history) => async dispatch => {
   try {
-    const res = await axios.post("api/project", project);
+    await axios.post("/api/project", project);
     history.push("/dashboard");
     dispatch({
       type: GET_ERRORS,
       payload: {}
     });
   } catch (err) {
-    //console.log(err);
     dispatch({
       type: GET_ERRORS,
       payload: err.response.data
@@ -19,8 +20,7 @@ export const createProject = (project, history) => async dispatch => {
   }
 };
 
-/* CRUD */
-/* CREATE Operation */
+/* Retrieve Operation */
 export const getProjects = () => async dispatch => {
 
     const res = await axios.get("/api/project/all");
@@ -33,21 +33,19 @@ export const getProjects = () => async dispatch => {
 }
 
 /*RETRIEVE Operation*/
-export const getProject = (id,history) => async dispatch => {
-  try{
-  const res = await axios.get(`api/project/${id}`);
+export const getProject = (id, history) => async dispatch => {
+  try {
+    const res = await axios.get(`/api/project/${id}`);
     /* dispatching actions to the store. */
     
     dispatch({
       type: GET_PROJECT,
       payload: res.data
     });
+  } catch (error) {
+    history.push("/dashboard");
   }
-  catch(err){
-        history.push("/dashboard");
-  }
-
-}
+};
 
 /* DELETE Operation */
 

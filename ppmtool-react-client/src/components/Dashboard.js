@@ -50,17 +50,19 @@ class Dashboard extends Component {
 }
 
 /* the type of project projs is object */
-Dashboard.PropTypes = {
-    project : PropTypes.object.isRequired,
-    getProjects: PropTypes.object.isRequired
-};
+Dashboard.propTypes = {
+    project: PropTypes.object.isRequired,
+    getProjects: PropTypes.func.isRequired
+  };
 
 /* mapping application state to props("project") of Dashboard component*/
-const mapStateToProps = state =>({
-    project:state.project
-    
-}) ;
+const mapStateToProps = state => ({
+    project: state.project
+  });
 
 /* here, connect(arg1, arg2) is actually, collecting data of state of application from backend through(getProjects) and 
 map to props of frontend component Dashboard*/
-export default connect(mapStateToProps,{getProjects})(Dashboard)
+export default connect(
+    mapStateToProps,
+    { getProjects }
+  )(Dashboard);

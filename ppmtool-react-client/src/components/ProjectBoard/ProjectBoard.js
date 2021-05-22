@@ -4,7 +4,7 @@ import Backlog from "./Backlog";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { getBacklog } from "../../actions/backlogActions";
-import { boardAlogorithm } from "../../algorithms/projectBoardAlogorithm";
+
 class ProjectBoard extends Component {
   //constructor to handle errors
   constructor() {
@@ -31,7 +31,7 @@ class ProjectBoard extends Component {
     const { errors } = this.state;
 
     let BoardContent;
-/*
+
     const boardAlgorithm = (errors, project_tasks) => {
       if (project_tasks.length < 1) {
         if (errors.projectNotFound) {
@@ -51,8 +51,8 @@ class ProjectBoard extends Component {
         return <Backlog project_tasks_prop={project_tasks} />;
       }
     };
-*/
-    BoardContent = boardAlogorithm(errors, project_tasks);
+
+    BoardContent = boardAlgorithm(errors, project_tasks);
 
     return (
       <div className="container">

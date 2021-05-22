@@ -103,15 +103,19 @@ public class ProjectTask {
         this.dueDate = dueDate;
     }
 
-    public String getProjectIdentifer() {
-        return projectIdentifier;
-    }
+    
 
-    public void setProjectIdentifer(String projectIdentifier) {
-        this.projectIdentifier = projectIdentifier;
-    }
+    public String getProjectIdentifier() {
+		return projectIdentifier;
+	}
 
-    public Date getCreate_At() {
+
+	public void setProjectIdentifier(String projectIdentifier) {
+		this.projectIdentifier = projectIdentifier;
+	}
+
+
+	public Date getCreate_At() {
         return create_At;
     }
 

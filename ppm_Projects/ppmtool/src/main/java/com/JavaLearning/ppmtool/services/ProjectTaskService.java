@@ -44,7 +44,7 @@ public class ProjectTaskService {
 		backlog.setPTSequence(BacklogSequence);
 		//Add sequence to project task
 		projectTask.setProjectSequence(projectIdentifier+"-"+BacklogSequence);
-		projectTask.setProjectIdentifer(projectIdentifier);
+		projectTask.setProjectIdentifier(projectIdentifier);
 		
 		// intial prioprity when priority is null  3-low, 1-high
 		if(projectTask.getPriority()==null || projectTask.getPriority()==0 ) {
@@ -89,7 +89,7 @@ public class ProjectTaskService {
 		}
 		
 		//make sure project task are part of right project backlog
-		if(!(projectTask.getProjectIdentifer().equals(ProjectIdentifier))) {
+		if(!(projectTask.getProjectIdentifier().equals(ProjectIdentifier))) {
 			throw new ProjectNotFoundException("Project task with id: "+
 					projectSequence+" does not exist in project "+ProjectIdentifier);
 		}

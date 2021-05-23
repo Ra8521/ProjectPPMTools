@@ -24,6 +24,9 @@ export const addProjectTask = (
 export const getBacklog = backlog_id => async dispatch => {
   try {
     const res = await axios.get(`/api/backlog/${backlog_id}`);
+    /* this is definition of action with type and payload  this type information is used to 
+    *  create decide state on which paylaod get mapped
+    */
     dispatch({
       type: GET_BACKLOG,
       payload: res.data

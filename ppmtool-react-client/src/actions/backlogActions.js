@@ -30,6 +30,7 @@ export const getBacklog = backlog_id => async dispatch => {
     dispatch({
       type: GET_BACKLOG,
       payload: res.data
+      
     });
   } catch (err) {
     dispatch({
@@ -55,5 +56,27 @@ export const getProjectTask = (
       "Are you sure want to contine?"
     )
     history.push("/dashboard");
+  }
+};
+
+
+export const updateProjectTask = (
+  backlog_id,
+  pt_id,
+  project_task,
+  history
+) => async dispatch => {
+  try {
+    await axios.patch(`/api/backlog/${backlog_id}/${pt_id}`, project_task);
+    history.push(`/projectBoard/${backlog_id}`);
+    dispatch({
+      type: GET_ERRORS,
+      payload: {}
+    });
+  } catch (err) {
+    dispatch({
+      type: GET_ERRORS,
+      payload: err.response.data
+    });
   }
 };

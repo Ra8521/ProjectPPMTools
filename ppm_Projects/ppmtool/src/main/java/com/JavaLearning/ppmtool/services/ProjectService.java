@@ -25,6 +25,7 @@ public class ProjectService {
 	private UserRepository userRepository;
 	
     public Project saveOrUpdateProject(Project project, String username){
+    	
     	String setIdentifier = project.getProjectIdentifier().toUpperCase();
     	if(project.getId() != null){
             Project existingProject = projectRepository.findByProjectIdentifier(project.getProjectIdentifier());

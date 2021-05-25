@@ -56,8 +56,8 @@
     <fullyQualifiedTypeName name="javax.persistence.FetchType"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
-    <fullyQualifiedTypeName name="java.security.Principal"/>
     <fullyQualifiedTypeName name="com.JavaLearning.ppmtool.repositories.UserRepository"/>
     <fullyQualifiedTypeName name="com.JavaLearning.ppmtool.domain.User"/>
     <fullyQualifiedTypeName name="com.JavaLearning.ppmtool.exceptions.ProjectNotFoundException"/>
+    <fullyQualifiedTypeName name="java.security.Principal"/>
 </qualifiedTypeNameHistroy>

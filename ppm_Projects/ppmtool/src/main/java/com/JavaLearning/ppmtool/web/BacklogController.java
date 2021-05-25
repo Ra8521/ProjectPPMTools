@@ -1,5 +1,6 @@
 package com.JavaLearning.ppmtool.web;
 
+import java.security.Principal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,21 +36,22 @@ public class BacklogController {
 	private MapValidationErrorService mapValidationErrorService;
 	@PostMapping("/{backlog_id}")
 	public ResponseEntity<?> addPTtoBacklog(@Validated @RequestBody ProjectTask projectTask,
-											BindingResult result, @PathVariable String backlog_id){
+											BindingResult result, @PathVariable String backlog_id, Principal principal){
 		
 		ResponseEntity<?> errormap = mapValidationErrorService.MapValidationService(result);
     	if(errormap!=null) {
     		return errormap;
     	}
-    	ProjectTask projectTask1 = projectTaskService.addProjectTask(backlog_id, projectTask);
+    	ProjectTask projectTask1 = projectTaskService.addProjectTask(backlog_id, projectTask, principal.getName());
     	
     	return new ResponseEntity<ProjectTask>(projectTask1, HttpStatus.CREATED);
 	}
 	
 	@GetMapping("/{backlog_id}")
-	public ResponseEntity<List<ProjectTask>> getPTtoBacklog(@PathVariable String backlog_id){
+	public ResponseEntity<List<ProjectTask>> getPTtoBacklog(@PathVariable String backlog_id, Principal principal){
 		
-		 return new ResponseEntity<List<ProjectTask>>(projectTaskService.findBacklogById(backlog_id), HttpStatus.OK);
+		 return new ResponseEntity<List<ProjectTask>>(projectTaskService.findBacklogById(backlog_id,principal.getName()), 
+				 											HttpStatus.OK);
 		
 	}
 	

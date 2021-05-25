@@ -24,7 +24,13 @@ public class ProjectTaskService {
 	
 	@Autowired
 	private ProjectRepository projectRepository;
-	public ProjectTask addProjectTask(String projectIdentifier, ProjectTask projectTask) {
+	
+	@Autowired
+	private ProjectService projectService;
+	
+	
+	public ProjectTask addProjectTask(String projectIdentifier, ProjectTask projectTask, String username) {
+		
 		projectIdentifier = projectIdentifier.toUpperCase();
 		//Project : Exception not found
 		/*
@@ -32,7 +38,7 @@ public class ProjectTaskService {
 		 */
 	
 		//project task added to specific project, project!=null, backlog exist
-	Backlog backlog = backlogRepository.findByProjectIdentifier(projectIdentifier);
+	Backlog backlog = projectService.findProjectByIdentifier(projectIdentifier, username).getBacklog();
 	
 	try {
 	//set backlog to project task
@@ -63,14 +69,10 @@ public class ProjectTaskService {
 	}
 
 
-	public List<ProjectTask> findBacklogById(String ProjectIdentifier) {
+	public List<ProjectTask> findBacklogById(String ProjectIdentifier, String username) {
 		// TODO Auto-generated method stub
 		
-		ProjectIdentifier = ProjectIdentifier.toUpperCase();
-		if(projectRepository.findByProjectIdentifier(ProjectIdentifier)==null) {
-			throw new ProjectNotFoundException("Project does not exist with id: "+ProjectIdentifier);
-		}
-		
+		projectService.findProjectByIdentifier(ProjectIdentifier, username);
 		return projectTaskRepository.findByProjectIdentifierOrderByPriority(ProjectIdentifier);
 	}
 	

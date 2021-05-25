@@ -56,27 +56,27 @@ public class BacklogController {
 	}
 	
 	@GetMapping("/{backlog_id}/{projectTaskSeq}")
-	public ResponseEntity<ProjectTask> getProjectTask(@PathVariable String backlog_id, @PathVariable String projectTaskSeq){
-		ProjectTask projectTask = projectTaskService.findProjectTaskBySequence(backlog_id,projectTaskSeq);
+	public ResponseEntity<ProjectTask> getProjectTask(@PathVariable String backlog_id, @PathVariable String projectTaskSeq, Principal principal){
+		ProjectTask projectTask = projectTaskService.findProjectTaskBySequence(backlog_id,projectTaskSeq,principal.getName());
 		return new  ResponseEntity<ProjectTask> (projectTask,HttpStatus.OK);
 	}
 	
 	
 			 @PatchMapping("/{backlog_id}/{projectTaskSeq}")
 	public ResponseEntity<?> updateProjectTask(@Validated @RequestBody ProjectTask projectTask,BindingResult result,
-			@PathVariable String backlog_id, @PathVariable String projectTaskSeq){
+			@PathVariable String backlog_id, @PathVariable String projectTaskSeq,Principal principal){
 		ResponseEntity<?> errormap = mapValidationErrorService.MapValidationService(result);
     	if(errormap!=null) {
     		return errormap;
     	}
-    	ProjectTask updateTask = projectTaskService.updateByProjectTask(projectTask, backlog_id, projectTaskSeq);
+    	ProjectTask updateTask = projectTaskService.updateByProjectTask(projectTask, backlog_id, projectTaskSeq,principal.getName() );
     	return new ResponseEntity<ProjectTask>(updateTask,HttpStatus.OK);
 	}
 	@DeleteMapping("/{backlog_id}/{projectTaskSeq}")
 	public ResponseEntity<?> deleteProjectTask(
-			@PathVariable String backlog_id, @PathVariable String projectTaskSeq){
+			@PathVariable String backlog_id, @PathVariable String projectTaskSeq, Principal principal){
 		
-    	projectTaskService.deleteByProjectTask(backlog_id, projectTaskSeq);
+    	projectTaskService.deleteByProjectTask(backlog_id, projectTaskSeq, principal.getName());
     	return new ResponseEntity<String>("Project Task "+projectTaskSeq+" was deleted successfully", HttpStatus.OK);
 	}
 }

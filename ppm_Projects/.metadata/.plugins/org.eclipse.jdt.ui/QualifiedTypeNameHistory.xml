@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.CrossOrigin"/>
-    <fullyQualifiedTypeName name="com.JavaLearning.ppmtool.services.ProjectTaskService"/>
-    <fullyQualifiedTypeName name="org.springframework.boot.context.properties.bind.BindResult"/>
-    <fullyQualifiedTypeName name="com.JavaLearning.ppmtool.domain.ProjectTask"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="com.JavaLearning.ppmtool.repositories.ProjectRepository"/>
@@ -42,10 +37,8 @@
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="org.springframework.transaction.annotation.Transactional"/>
     <fullyQualifiedTypeName name="javax.validation.constraints.NotBlank"/>
-    <fullyQualifiedTypeName name="com.JavaLearning.ppmtool.services.CustomUserDetailsService"/>
     <fullyQualifiedTypeName name="org.springframework.security.config.BeanIds"/>
     <fullyQualifiedTypeName name="org.springframework.context.annotation.Bean"/>
-    <fullyQualifiedTypeName name="com.JavaLearning.ppmtool.domain.User"/>
     <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="io.jsonwebtoken.Jwts"/>
     <fullyQualifiedTypeName name="java.util.Map"/>
@@ -56,8 +49,15 @@
     <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
     <fullyQualifiedTypeName name="com.JavaLearning.ppmtool.payload.LoginRequest"/>
     <fullyQualifiedTypeName name="org.springframework.security.core.Authentication"/>
-    <fullyQualifiedTypeName name="org.springframework.security.authentication.UsernamePasswordAuthenticationToken"/>
-    <fullyQualifiedTypeName name="org.springframework.security.core.context.SecurityContextHolder"/>
-    <fullyQualifiedTypeName name="com.JavaLearning.ppmtool.security.SecurityConstant"/>
     <fullyQualifiedTypeName name="com.JavaLearning.ppmtool.payload.JWTLoginSuccessResponse"/>
+    <fullyQualifiedTypeName name="com.JavaLearning.ppmtool.services.CustomUserDetailsService"/>
+    <fullyQualifiedTypeName name="com.JavaLearning.ppmtool.security.SecurityConstant"/>
+    <fullyQualifiedTypeName name="org.springframework.util.StringUtils"/>
+    <fullyQualifiedTypeName name="com.JavaLearning.ppmtool.domain.User"/>
+    <fullyQualifiedTypeName name="org.springframework.security.authentication.UsernamePasswordAuthenticationToken"/>
+    <fullyQualifiedTypeName name="java.util.Collection"/>
+    <fullyQualifiedTypeName name="java.util.Collections"/>
+    <fullyQualifiedTypeName name="org.springframework.security.web.authentication.WebAuthenticationDetailsSource"/>
+    <fullyQualifiedTypeName name="org.springframework.security.core.context.SecurityContextHolder"/>
+    <fullyQualifiedTypeName name="org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter"/>
 </qualifiedTypeNameHistroy>

@@ -7,6 +7,7 @@ import com.JavaLearning.ppmtool.domain.Backlog;
 import com.JavaLearning.ppmtool.domain.Project;
 import com.JavaLearning.ppmtool.domain.User;
 import com.JavaLearning.ppmtool.exceptions.ProjectIdException;
+import com.JavaLearning.ppmtool.exceptions.ProjectNotFoundException;
 import com.JavaLearning.ppmtool.repositories.BacklogRepository;
 import com.JavaLearning.ppmtool.repositories.ProjectRepository;
 import com.JavaLearning.ppmtool.repositories.UserRepository;
@@ -50,27 +51,26 @@ public class ProjectService {
 
     }
 	
-	public Project findProjectByIdentifier(String ProjectId) {
+	public Project findProjectByIdentifier(String ProjectId, String username) {
 		Project project =   projectRepository.findByProjectIdentifier(ProjectId.toUpperCase());
 		
 		if(project==null) {
 			throw new ProjectIdException("Project id: "+ProjectId+" does not exist");
 		}
+		if(!project.getProjectLeader().equals(username)) {
+			throw new ProjectNotFoundException("Project not found under your account");
+		}
 		return project;
 	}
 	
-	public Iterable<Project> findAllProject(){
-		return projectRepository.findAll();
+	public Iterable<Project> findAllProject(String username){
+		return projectRepository.findAllByProjectLeader(username);
 	
 		
 	}
 	
-	public void deleteProjectByIdentifier(String projectId) {
-		Project project = projectRepository.findByProjectIdentifier(projectId.toUpperCase());
-		if(project==null) {
-			throw new ProjectIdException("Project with Id: "+projectId+" does not exist");
-		}
-		projectRepository.delete(project);
+	public void deleteProjectByIdentifier(String projectId, String username) {
+		projectRepository.delete(findProjectByIdentifier(projectId,username));
 	}
 	
 	

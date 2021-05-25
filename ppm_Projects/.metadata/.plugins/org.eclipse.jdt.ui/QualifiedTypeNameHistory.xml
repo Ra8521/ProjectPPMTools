@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PutMapping"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.DeleteMapping"/>
     <fullyQualifiedTypeName name="javax.persistence.Entity"/>
     <fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
@@ -60,4 +59,5 @@
     <fullyQualifiedTypeName name="java.security.Principal"/>
     <fullyQualifiedTypeName name="com.JavaLearning.ppmtool.repositories.UserRepository"/>
     <fullyQualifiedTypeName name="com.JavaLearning.ppmtool.domain.User"/>
+    <fullyQualifiedTypeName name="com.JavaLearning.ppmtool.exceptions.ProjectNotFoundException"/>
 </qualifiedTypeNameHistroy>

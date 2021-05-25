@@ -1,5 +1,6 @@
 package com.JavaLearning.ppmtool.web;
 
+import java.security.Principal;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -38,13 +39,13 @@ public class ProjectController {
 
 
     @PostMapping("")
-    public ResponseEntity<?> createNewProject(@Validated @RequestBody Project project, BindingResult result){
+    public ResponseEntity<?> createNewProject(@Validated @RequestBody Project project, BindingResult result, Principal principal){
 
     	ResponseEntity<?> errormap = MapValidationService.MapValidationService(result);
     	if(errormap!=null) {
     		return errormap;
     	}
-        Project project1 = projectService.saveOrUpdateProject(project);
+        Project project1 = projectService.saveOrUpdateProject(project,principal.getName());
         return new ResponseEntity<Project>(project1, HttpStatus.CREATED);
     }
     @GetMapping("/{projectId}")

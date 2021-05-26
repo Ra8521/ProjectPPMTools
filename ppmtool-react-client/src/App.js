@@ -26,7 +26,7 @@ class App extends Component {
               //Public Route
             }
             <Route exact path="/" component={Landing} />
-            <Route exact path="/register" component = {Register} />
+            <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
             {
                 //Private Route

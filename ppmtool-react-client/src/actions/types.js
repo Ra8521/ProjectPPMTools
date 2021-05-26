@@ -12,5 +12,5 @@ export const GET_PROJECT_TASK = "GET_PROJECT_TASK";
 export const DELETE_PROJECT_TASK = "DELETE_PROJECT_TASK";
 
 //For Security Action
-export const SET_CURRENT_USER= "SET_CURRENT_USER";
+export const SET_CURRENT_USER = "SET_CURRENT_USER";
 

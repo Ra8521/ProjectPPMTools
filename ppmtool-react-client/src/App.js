@@ -25,6 +25,7 @@ const jwtToken = localStorage.jwtToken;
 if (jwtToken) {
   setJWTtoken(jwtToken);
   const decoded_jwtToken = jwt_decode(jwtToken);
+  /* Here, store is a Redux-Store */
   store.dispatch({
     type: SET_CURRENT_USER,
     payload: decoded_jwtToken

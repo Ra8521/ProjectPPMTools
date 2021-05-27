@@ -7,8 +7,9 @@ const initalState = {};
 const middleware = [thunk];
 
 let store;
-
-if (window.navigator.userAgent.includes("Chrome")) {
+const ReactReduxDevttols = 
+window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+if (window.navigator.userAgent.includes("Chrome") && ReactReduxDevttols) {
   store = createStore(
     rootReducer,
     initalState,

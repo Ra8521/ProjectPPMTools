@@ -17,6 +17,14 @@ import classnames from "classnames";
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
+
+  componentDidMount(){
+    if(this.props.security.validToken){
+      this.props.history.push("/dashboard");
+    }
+  }
+
+
 /*
   componentWillReceiveProps is required if you want to update the state values with new props values, 
   this method will get called whenever any change happens to props values.
@@ -124,9 +132,11 @@ componentWillReceiveProps(nextProps){
 }
 Register.propTypes = {
   createNewUser : PropTypes.func.isRequired,
-  errors : PropTypes.object.isRequired
+  errors : PropTypes.object.isRequired,
+  security: PropTypes.object.isRequired
 }
 const mapStatetoProps = state => ({
-  errors: state.errors
+  errors: state.errors,
+  security:state.security
 });    
 export default connect(mapStatetoProps,{createNewUser})(Register);
